@@ -1,0 +1,252 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 16px;
+}
+
+body{
+    font-family: 'Balsamiq Sans', cursive;
+}
+
+.hide{
+    display: none;
+}
+
+.fadeIn{
+    animation: fade 0.5s ease-in-out;
+}
+
+@keyframes fade{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+header{ 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    height: 60px;
+    width: 100%;
+    /* width: 100%; */
+    margin: 0 auto;
+    background-color: rgb(215, 244, 248);
+    padding: 15px;
+}
+
+.logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 20px;
+}
+.logo p{
+    color: #6a149b;
+    font-size: 20px;
+    font-weight: 600;
+}
+nav ul{
+    display: flex;
+    align-items: center;
+}
+
+nav ul li{
+    list-style: none;
+}
+
+nav ul li:last-child{
+    padding-right: 20px;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: #6a149b;
+    padding: 10px;
+}
+
+main{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.stats {
+    width: 100%;
+    background-image: linear-gradient(rgba(0,0,0,0.89) , rgba(0,0,0,0.89)),url('images/virus2.jpg');
+    background-size: cover;
+} 
+
+.latest-report{
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    padding-top: 50px;
+    margin: 0 auto;
+}
+
+.country, .total-cases , .recovered , .death-cases{
+    height: 100px;
+}
+ .name{
+     font-size: 2.2em;
+     font-weight: bold;
+     color: rgb(243, 131, 243);
+ }
+
+ .change-country{
+     cursor: pointer;
+ }
+
+ .title{
+     font-size: 1.3em;
+ }
+
+ .total-cases .value{
+     font-size: 2em;
+     font-weight: bold;
+ }
+
+ .recovered .value{
+     font-size: 2em;
+     font-weight: bold;
+     color: #009688;
+}
+
+ .death-cases .value{
+     font-size: 2em;
+     font-weight: bold;
+     color: #f44336;
+}
+
+.new-value{
+    font-size: 1.3em;
+}
+
+.chart{
+    width: 80%;
+    height: 70vh;
+    min-height: 500px;
+    margin: 0 auto;
+    padding: 50px 0;
+}
+
+.search-country{
+    position: relative;
+    top: 10px;
+}
+
+.search-box{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 400px;
+    height: 30px;
+    background-color: #111;
+
+    z-index: 1;
+}
+
+.search-box input{
+    width: 360px;
+    height: 25px;
+    background-color: transparent;
+    color: white;
+    outline: none;
+    border: 2px solid #111;
+    padding-left: 10px;
+    font-size: 1.1em;
+}
+
+.search-box p{
+    padding-right: 10px;
+    width: 18px;
+    cursor: pointer;
+    font-size: 1.2em;
+}
+
+.country-list{
+    display: flex;
+    position: absolute;
+    top: 30px;
+    width: 400px;
+    height: 300px;
+    background-color: #111;
+    opacity:0.7;
+
+    overflow-y: scroll;
+}
+
+.country-list ul li{
+    list-style: none;
+    cursor: pointer;
+    padding: 10px;
+    color: #fff;
+}
+
+.country-list ul li:hover{
+    border-left: 2px solid white;
+
+}
+
+/* width */
+.country-list::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  .country-list::-webkit-scrollbar-track {
+    background: #111;
+  }
+  
+  /* Handle */
+  .country-list::-webkit-scrollbar-thumb {
+    background: #f1f1f1;
+  }
+  
+  /* Handle on hover */
+  .country-list::-webkit-scrollbar-thumb:hover {
+    background: #fff;
+  }
+
+
+footer{
+    max-width: 1200px;
+    height: 60px;
+    margin: 0 auto;
+    background-color: #6a149b;
+}
+
+.footer-container{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.copyright{
+    display: grid;
+    place-items: center;
+}
+
+.copyright{
+    color: white;
+    font-size: 1.2em;
+}
+
+@media screen and (max-width: 600px){
+    .latest-report{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
