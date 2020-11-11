@@ -10,6 +10,7 @@ html{
 
 body{
     font-family: 'Balsamiq Sans', cursive;
+    background: #222;
 }
 
 .hide{
@@ -31,6 +32,7 @@ body{
 
 header{ 
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
     max-width: 1200px;
@@ -38,7 +40,7 @@ header{
     width: 100%;
     /* width: 100%; */
     margin: 0 auto;
-    background-color: rgb(215, 244, 248);
+    background-color:  #6a149b;
     padding: 15px;
 }
 
@@ -49,27 +51,12 @@ header{
     padding-left: 20px;
 }
 .logo p{
-    color: #6a149b;
-    font-size: 20px;
+    color: black;
+    font-size: 35px;
     font-weight: 600;
-}
-nav ul{
-    display: flex;
-    align-items: center;
-}
+    letter-spacing: 1px;
+    font-family: 'Goldman', cursive;
 
-nav ul li{
-    list-style: none;
-}
-
-nav ul li:last-child{
-    padding-right: 20px;
-}
-
-nav ul li a{
-    text-decoration: none;
-    color: #6a149b;
-    padding: 10px;
 }
 
 main{
@@ -79,7 +66,7 @@ main{
 
 .stats {
     width: 100%;
-    background-image: linear-gradient(rgba(0,0,0,0.89) , rgba(0,0,0,0.89)),url('images/virus2.jpg');
+    background-image: linear-gradient(rgba(0,0,0,0.9) , rgba(0,0,0,0.9)),url('images/virus2.jpg');
     background-size: cover;
 } 
 
@@ -152,7 +139,7 @@ main{
 
     width: 400px;
     height: 30px;
-    background-color: #111;
+    background-color: rgb(10, 10, 10);
 
     z-index: 1;
 }
@@ -181,7 +168,7 @@ main{
     top: 30px;
     width: 400px;
     height: 300px;
-    background-color: #111;
+    background-color: rgb(3, 3, 3);
     opacity:0.7;
 
     overflow-y: scroll;

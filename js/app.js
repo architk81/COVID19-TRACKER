@@ -1,7 +1,7 @@
 const total_cases = document.querySelector('.total-cases .value');
 const new_cases = document.querySelector('.total-cases .new-value');
 const recovered_cases = document.querySelector('.recovered .value');
-const new_recovered_cases = document.querySelector('.recovered .new-value');
+const n_recovered_cases = document.querySelector('.recovered .n-value');
 const death_cases = document.querySelector('.death-cases .value');
 const new_death_cases = document.querySelector('.death-cases .new-value');
 const country_name = document.querySelector('.country .name');
@@ -15,7 +15,8 @@ let app_data = [],
     cases_list = [],
     recovered_list = [],
     deaths_list = [],
-    dates = [];
+    dates = [],
+    formatedDates = [];
 
 // COUNTRY CODE 
 const country_code = geoplugin_countryCode();
@@ -123,8 +124,10 @@ function updateStats() {
     const new_confirmed_cases = total_case - cases_list[cases_list.length - 2];
 
     const total_recovered = recovered_list[recovered_list.length - 1];
-    const new_recovered_cases =
-        total_recovered - recovered_list[recovered_list.length - 2];
+    const new_recovered_cases =  total_recovered - recovered_list[recovered_list.length - 2];
+
+    // console.log(total_recovered);
+    // console.log(new_recovered_cases);
 
     const total_deaths = deaths_list[deaths_list.length - 1];
     const new_deaths_cases = total_deaths - deaths_list[deaths_list.length - 2];
@@ -135,7 +138,7 @@ function updateStats() {
     new_cases.innerHTML = `+${new_confirmed_cases}`;
 
     recovered_cases.innerHTML = total_recovered == undefined ? 0 : total_recovered;
-    new_recovered_cases.innerHTML = `+${new_recovered_cases}`;
+    n_recovered_cases.innerHTML = `+${new_recovered_cases}`;
 
 
     death_cases.innerHTML = total_deaths == undefined ? 0 : total_deaths;
@@ -182,4 +185,12 @@ function axesLinearChart(){
             maintainAspectRatio : false
         }
     });
+}
+
+const monthsNames = ['Jan' , 'Feb' , 'Mar' , 'Apr' , 'May' , 'Jun' , 'July' , 'Aug' , 'Sep' , 'Oct' , 'Nov' , 'Dec'];
+
+function formatDate(dataString){
+    let date = new Date(dataString);
+
+    return `${date.getDate()} ${monthsNames[date.getMonth()]}`;
 }
